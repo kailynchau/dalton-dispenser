@@ -4,6 +4,13 @@ The rebuilt system from the Summer 2026 research term. The v1 Arduino controller
 
 The main finding was that capillary forces, not the dispensing method, control how SU-8 spreads across the needles. Because of that, the final process is **semi-automated**: SU-8 is applied manually, and the developer dip and IPA rinse are automated.
 
+<p align="center">
+  <img src="images/system.jpg" width="48%">
+  <img src="images/dip-station.jpg" width="48%">
+</p>
+
+Poster: [BURP 2026](docs/poster.pdf)
+
 ## Layout
 
 ```
@@ -16,6 +23,8 @@ firmware/                  Changed Marlin files only — copy over a Marlin bugf
   Marlin/src/gcode/gcode.h     adds M800 declaration
 stl/                       3D-printed parts (vacuum chucks, reservoirs, solenoid/tip mounts, end stop mounts, microscope holder)
 data/sem/                  ImageJ tip-height measurements from SEM images (8 needles per file)
+images/                    Photos of the system
+docs/                      BURP poster
 ```
 
 ## Hardware
@@ -23,8 +32,14 @@ data/sem/                  ImageJ tip-height measurements from SEM images (8 nee
 - Modified Ender 3 frame, BTT SKR V1.3 (LPC1768), TMC2208 drivers, NEMA 17 motors
 - Steps/mm: X = Y = 40, Z = 200 (25 µm/step X/Y, 5 µm/step Z)
 - 12 V normally-closed solenoid valve on the **HE0** output with a 1N4007 flyback diode
-- Pneumatic parts list: [`../v1-syringe-pump/hardware/Solenoid_Valve_Planning.pdf`](../v1-syringe-pump/hardware/Solenoid_Valve_Planning.pdf)
+- Pneumatic parts list: [`hardware/Solenoid_Valve_Planning.pdf`](hardware/Solenoid_Valve_Planning.pdf)
 - SKR V1.3 docs and pin diagram: https://github.com/bigtreetech/BIGTREETECH-SKR-V1.3
+
+<p align="center">
+  <img src="images/vacuum-chuck.jpg" width="40%">
+  <img src="images/solenoid-head.jpg" width="40%">
+</p>
+<p align="center"><em>Left: vacuum chuck (concentric grooves). Right: solenoid dispensing head over the array fixture.</em></p>
 
 ## Firmware
 
